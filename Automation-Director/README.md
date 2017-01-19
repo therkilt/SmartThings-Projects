@@ -1,5 +1,6 @@
 Automation Director
-This SmartApp will allow you to choose 
+
+This SmartApp will allow you to choose
   Any number of  Button Controllers(You choose the actions per button press/hold)
   Acceleration sensors
   Contact sensors
