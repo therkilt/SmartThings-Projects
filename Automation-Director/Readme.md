@@ -52,4 +52,4 @@ To change any number of the following:
   Control Speakers(play/pause/toggle/mute/unmute/next/previous/volume up/volume down),
   
 Known issues:
-  After you setup an instance, if you want to change the custom Push or SMS notifications you should deselect them from the Actions page and save then go back in to change them and re-assign them otherwise actions that are no longer valid will not show up in the menus and will not do anything but if you watch the live logging you will see it still tries processing them.
+  After you setup an instance, if you want to change the custom Push or SMS notifications you should deselect them from the "Assign the actions to the triggers" page and save then go back in to change them and re-assign them otherwise actions that are no longer valid will not show up in the menus and will not do anything but if you watch the live logging you will see it still tries processing them.
