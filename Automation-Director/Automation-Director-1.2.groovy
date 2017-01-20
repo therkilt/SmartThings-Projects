@@ -1376,7 +1376,7 @@ def NametheApp() {
 }
 
 def DoContactOpen(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -1398,7 +1398,7 @@ def DoContactOpen(evt) {
 }
 
 def DoContactClosed(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -1420,7 +1420,7 @@ def DoContactClosed(evt) {
 }
 
 def DoSwitchOn(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -1442,7 +1442,7 @@ def DoSwitchOn(evt) {
 }
 
 def DoSwitchOff(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -1464,7 +1464,7 @@ def DoSwitchOff(evt) {
 }
 
 def DoAccelerationActive(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -1486,7 +1486,7 @@ def DoAccelerationActive(evt) {
 }
 
 def DoAccelerationInactive(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -1508,7 +1508,7 @@ def DoAccelerationInactive(evt) {
 }
 
 def DoMotionActive(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -1530,7 +1530,7 @@ def DoMotionActive(evt) {
 }
 
 def DoMotionInactive(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -1552,7 +1552,7 @@ def DoMotionInactive(evt) {
 }
 
 def DoTamperClear(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -1574,7 +1574,7 @@ def DoTamperClear(evt) {
 }
 
 def DoTamperDetected(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -1596,7 +1596,7 @@ def DoTamperDetected(evt) {
 }
 
 def DoShockClear(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -1618,7 +1618,7 @@ def DoShockClear(evt) {
 }
 
 def DoShockDetected(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -1640,7 +1640,7 @@ def DoShockDetected(evt) {
 }
 
 def DoSleepNotSleeping(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -1662,7 +1662,7 @@ def DoSleepNotSleeping(evt) {
 }
 
 def DoSleepSleeping(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -1684,7 +1684,7 @@ def DoSleepSleeping(evt) {
 }
 
 def DoSoundDetected(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -1706,7 +1706,7 @@ def DoSoundDetected(evt) {
 }
 
 def DoSoundNotDetected(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -1728,7 +1728,7 @@ def DoSoundNotDetected(evt) {
 }
 
 def DoTouched(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -1750,7 +1750,7 @@ def DoTouched(evt) {
 }
 
 def DoWaterDry(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -1772,7 +1772,7 @@ def DoWaterDry(evt) {
 }
 
 def DoWaterWet(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -1794,7 +1794,7 @@ def DoWaterWet(evt) {
 }
 
 def DoBeaconNotPresent(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -1832,7 +1832,7 @@ def DoBeaconNotPresent(evt) {
 }
 
 def DoBeaconPresent(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -1854,7 +1854,7 @@ def DoBeaconPresent(evt) {
 }
 
 def DoPresenceNotPresent(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -1892,7 +1892,7 @@ def DoPresenceNotPresent(evt) {
 }
 
 def DoPresencePresent(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -1914,7 +1914,7 @@ def DoPresencePresent(evt) {
 }
 
 def DoCODetectorClear(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -1936,7 +1936,7 @@ def DoCODetectorClear(evt) {
 }
 
 def DoCODetectorDetected(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -1958,7 +1958,7 @@ def DoCODetectorDetected(evt) {
 }
 
 def DoCODetectorTested(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -1980,7 +1980,7 @@ def DoCODetectorTested(evt) {
 }
 
 def DoSmokeClear(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -2002,7 +2002,7 @@ def DoSmokeClear(evt) {
 }
 
 def DoSmokeDetected(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -2024,7 +2024,7 @@ def DoSmokeDetected(evt) {
 }
 
 def DoSmokeTested(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -2046,7 +2046,7 @@ def DoSmokeTested(evt) {
 }
 
 def DoPowerSourceBattery(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -2068,7 +2068,7 @@ def DoPowerSourceBattery(evt) {
 }
 
 def DoPowerSourceDC(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -2090,7 +2090,7 @@ def DoPowerSourceDC(evt) {
 }
 
 def DoPowerSourceMains(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -2112,7 +2112,7 @@ def DoPowerSourceMains(evt) {
 }
 
 def DoPowerSourceUnknown(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -2134,7 +2134,7 @@ def DoPowerSourceUnknown(evt) {
 }
 
 def DoDoorClosed(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -2156,7 +2156,7 @@ def DoDoorClosed(evt) {
 }
 
 def DoDoorOpen(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -2178,7 +2178,7 @@ def DoDoorOpen(evt) {
 }
 
 def DoDoorUnknown(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -2200,7 +2200,7 @@ def DoDoorUnknown(evt) {
 }
 
 def DoValveClosed(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -2222,7 +2222,7 @@ def DoValveClosed(evt) {
 }
 
 def DoValveOpen(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -2244,7 +2244,7 @@ def DoValveOpen(evt) {
 }
 
 def DoShadeClosed(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -2266,7 +2266,7 @@ def DoShadeClosed(evt) {
 }
 
 def DoShadeOpen(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -2288,7 +2288,7 @@ def DoShadeOpen(evt) {
 }
 
 def DoShadePartiallyOpen(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -2310,7 +2310,7 @@ def DoShadePartiallyOpen(evt) {
 }
 
 def DoShadeUnknown(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -2332,7 +2332,7 @@ def DoShadeUnknown(evt) {
 }
 
 def DoTemperature(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -2387,7 +2387,7 @@ def DoTemperature(evt) {
 }
 
 def DoPowerMeter(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -2442,7 +2442,7 @@ def DoPowerMeter(evt) {
 }
 
 def DoBattery(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -2503,7 +2503,7 @@ def DoBattery(evt) {
 }
 
 def DoVoltage(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -2558,7 +2558,7 @@ def DoVoltage(evt) {
 }
 
 def DoEnergyMeter(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -2613,7 +2613,7 @@ def DoEnergyMeter(evt) {
 }
 
 def DoCO2Measurement(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -2648,7 +2648,7 @@ def DoCO2Measurement(evt) {
 }
 
 def DoStep(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -2703,7 +2703,7 @@ def DoStep(evt) {
 }
 
 def DoStepGoal(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -2738,7 +2738,7 @@ def DoStepGoal(evt) {
 }
 
 def DoIlluminance(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -2793,7 +2793,7 @@ def DoIlluminance(evt) {
 }
 
 def DoHumidity(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -2848,7 +2848,7 @@ def DoHumidity(evt) {
 }
 
 def DoUltravioletIndex(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -2903,7 +2903,7 @@ def DoUltravioletIndex(evt) {
 }
 
 def DophMeasurement(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -2958,7 +2958,7 @@ def DophMeasurement(evt) {
 }
 
 def DosoundPressureLevel(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def Changed
 		def Number
 		def SelectionArray = [][]
@@ -3013,7 +3013,7 @@ def DosoundPressureLevel(evt) {
 }
 
 def DoButtonPushed(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def buttonNumber = parseJson(evt.data)?.buttonNumber
 		def Changed
 		def Number
@@ -3036,7 +3036,7 @@ def DoButtonPushed(evt) {
 }
 
 def DoButtonHeld(evt) {
-	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && soundPressureLevel()) {
+	if (allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
 		def buttonNumber = parseJson(evt.data)?.buttonNumber
 		def Changed
 		def Number
@@ -4899,4 +4899,3 @@ private CurrentShade() {
 			return true
 	}
 }
-
