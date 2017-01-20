@@ -893,13 +893,12 @@ def Assignments() {
 			section(title: "Configure Buttons...", hidden: true, hideable: true) {
 				for ( def h = 0; h < Button.size(); h++) {
                 	paragraph "${Button[h]}"
-					def HoldSet = "N/A"
+					boolean HoldSet = false
 					for ( def i = 0; i < Button[h].capabilities.size(); i++) {
 						if (Button[h].capabilities[i].name as String == "Holdable Button") {
-							HoldSet = "true"
+							HoldSet = true
 						}
 					}
-					//if (HoldSet == "true") {paragraph "${Button[h]} reported: ${Button[h].currentValue("numberOfButtons")} | $HoldSet"}
 					if (Button[h].currentValue("numberOfButtons") == null) {input "NumberofButtons${Button[h].id}", "number", title: "Number of Buttons on ${Button[h]}", required: true, submitOnChange: true}
 					if (!HoldSet) {input "Holdable${Button[h].id}", "bool", title: "Controller supports holding buttons", submitOnChange: true}
 					if (settings["NumberofButtons${Button[h].id}"] != null) {
