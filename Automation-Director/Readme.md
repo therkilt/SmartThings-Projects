@@ -53,3 +53,7 @@ To change any number of the following:
   
 Known issues:
   After you setup an instance, if you want to change the custom Push or SMS notifications you should deselect them from the "Assign the actions to the triggers" page and save then go back in to change them and re-assign them otherwise actions that are no longer valid will not show up in the menus and will not do anything but if you watch the live logging you will see it still tries processing them.
+
+Version History:
+V 1.1 The smartapp now only asks for the numberofbuttons and if it supports holdableButton if the information isn't provided by the DTH
+V 1.0 Initial release
