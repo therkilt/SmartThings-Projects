@@ -13,7 +13,7 @@
  *  for the specific language governing permissions and limitations under the License.
  *
  *  Version History:
- *  V 1.3 Added the ability to disable the instance of the SmartApp and moved the requirements checking
+ *  V 1.3 Added the ability to disable the instance of the SmartApp
  *  V 1.2 Added additional requirement options
  *  V 1.1 The smartapp now only asks for the numberofbuttons and if it supports holdableButton if the information isn't provided by the DTH
  *  V 1.0 Initial release
@@ -63,105 +63,103 @@ def initialize() {
 	if (!overrideLabel) {
 		app.updateLabel("Automation Director")
 	}
-	if (InstanceEnabled && allOk && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()) {
-		if (Button) {
-			subscribe(Button, "button.pushed", DoButtonPushed)
-			subscribe(Button, "button.held", DoButtonHeld)
-		}
-		if (Contact) {
-			subscribe(Contact, "contact.open", DoContactOpen)
-			subscribe(Contact, "contact.closed", DoContactClosed)
-		}
-		if (Switch) {
-			subscribe(Switch, "switch.on", DoSwitchOn)
-			subscribe(Switch, "switch.off", DoSwitchOff)
-		}
-		if (Acceleration) {
-			subscribe(Acceleration, "acceleration.active", DoAccelerationActive)
-			subscribe(Acceleration, "acceleration.inactive", DoAccelerationInactive)
-		}
-		if (Motion) {
-			subscribe(Motion, "motion.active", DoMotionActive)
-			subscribe(Motion, "motion.inactive", DoMotionInactive)
-		}
-		if (Tamper) {
-			subscribe(Tamper, "tamper.clear", DoTamperClear)
-			subscribe(Tamper, "tamper.detected", DoTamperDetected)
-		}
-		if (Shock) {
-			subscribe(Shock, "shock.clear", DoShockClear)
-			subscribe(Shock, "shock.detected", DoShockDetected)
-		}
-		if (Sleep) {
-			subscribe(Sleep, "sleeping.not sleeping", DoSleepNotSleeping)
-			subscribe(Sleep, "sleeping.sleeping", DoSleepSleeping)
-		}
-		if (Sound) {
-			subscribe(Sound, "sound.detected", DoSoundDetected)
-			subscribe(Sound, "sound.not detected", DoSoundNotDetected)
-		}
-		if (Touch) {
-			subscribe(Touch, "touch.touched", DoTouched)
-		}
-		if (Water) {
-			subscribe(Water, "water.dry", DoWaterDry)
-			subscribe(Water, "water.wet", DoWaterWet)
-		}
-		if (Beacon) {
-			subscribe(Beacon, "presence.not present", DoBeaconNotPresent)
-			subscribe(Beacon, "presence.present", DoBeaconPresent)
-		}
-		if (Presence) {
-			subscribe(Presence, "presence.not present", DoPresenceNotPresent)
-			subscribe(Presence, "presence.present", DoPresencePresent)
-		}
-		if (CODetector) {
-			subscribe(CODetector, "carbonMonoxide.clear", DoCODetectorClear)
-			subscribe(CODetector, "carbonMonoxide.detected", DoCODetectorDetected)
-			subscribe(CODetector, "carbonMonoxide.tested", DoCODetectorTested)
-		}
-		if (Smoke) {
-			subscribe(Smoke, "smoke.clear", DoSmokeClear)
-			subscribe(Smoke, "smoke.detected", DoSmokeDetected)
-			subscribe(Smoke, "smoke.tested", DoSmokeTested)
-		}
-		if (PowerSource) {
-			subscribe(PowerSource, "powerSource.battery", DoPowerSourceBattery)
-			subscribe(PowerSource, "powerSource.dc", DoPowerSourceDC)
-			subscribe(PowerSource, "powerSource.mains", DoPowerSourceMains)
-			subscribe(PowerSource, "powerSource.unknown", DoPowerSourceUnknown)
-		}
-		if (Door) {
-			subscribe(Door, "door.closed", DoDoorClosed)
-			subscribe(Door, "door.open", DoDoorOpen)
-			subscribe(Door, "door.unknown", DoDoorUnknown)
-		}
-		if (Valve) {
-			subscribe(Valve, "contact.closed", DoValveClosed)
-			subscribe(Valve, "contact.open", DoValveOpen)
-		}
-		if (Shade) {
-			subscribe(Shade, "windowShade.closed", DoShadeClosed)
-			subscribe(Shade, "windowShade.open", DoShadeOpen)
-			subscribe(Shade, "windowShade.partially open", DoShadePartiallyOpen)
-			subscribe(Shade, "windowShade.unknown", DoShadeUnknown)
-		}
-		if (Temperature) {subscribe(Temperature, "temperature", DoTemperature)}
-		if (PowerMeter) {subscribe(PowerMeter, "powerMeter", DoPowerMeter)}
-		if (Battery) {subscribe(Battery, "battery", DoBattery)}
-		if (Voltage) {subscribe(Voltage, "voltage", DoVoltage)}
-		if (EnergyMeter) {subscribe(EnergyMeter, "energy", DoEnergyMeter)}
-		if (CO2Measurement) {subscribe(CO2Measurement, "carbonDioxide", DoCO2Measurement)}
-		if (Step) {
-			subscribe(Step, "steps", DoStep)
-			if (StepGoal) {subscribe(Step, "goal", DoStepGoal)}
-		}
-		if (Illuminance) {subscribe(Illuminance, "illuminance", DoIlluminance)}
-		if (Humidity) {subscribe(Humidity, "humidity", DoHumidity)}
-		if (UltravioletIndex) {subscribe(UltravioletIndex, "ultravioletIndex", DoUltravioletIndex)}
-		if (phMeasurement) {subscribe(phMeasurement, "pH", DophMeasurement)}
-		if (soundPressureLevel) {subscribe(soundPressureLevel, "soundPressureLevel", DosoundPressureLevel)}
+	if (Button) {
+		subscribe(Button, "button.pushed", DoButtonPushed)
+		subscribe(Button, "button.held", DoButtonHeld)
 	}
+	if (Contact) {
+		subscribe(Contact, "contact.open", DoContactOpen)
+		subscribe(Contact, "contact.closed", DoContactClosed)
+	}
+	if (Switch) {
+		subscribe(Switch, "switch.on", DoSwitchOn)
+		subscribe(Switch, "switch.off", DoSwitchOff)
+	}
+	if (Acceleration) {
+		subscribe(Acceleration, "acceleration.active", DoAccelerationActive)
+		subscribe(Acceleration, "acceleration.inactive", DoAccelerationInactive)
+	}
+	if (Motion) {
+		subscribe(Motion, "motion.active", DoMotionActive)
+		subscribe(Motion, "motion.inactive", DoMotionInactive)
+	}
+	if (Tamper) {
+		subscribe(Tamper, "tamper.clear", DoTamperClear)
+		subscribe(Tamper, "tamper.detected", DoTamperDetected)
+	}
+	if (Shock) {
+		subscribe(Shock, "shock.clear", DoShockClear)
+		subscribe(Shock, "shock.detected", DoShockDetected)
+	}
+	if (Sleep) {
+		subscribe(Sleep, "sleeping.not sleeping", DoSleepNotSleeping)
+		subscribe(Sleep, "sleeping.sleeping", DoSleepSleeping)
+	}
+	if (Sound) {
+		subscribe(Sound, "sound.detected", DoSoundDetected)
+		subscribe(Sound, "sound.not detected", DoSoundNotDetected)
+	}
+	if (Touch) {
+		subscribe(Touch, "touch.touched", DoTouched)
+	}
+	if (Water) {
+		subscribe(Water, "water.dry", DoWaterDry)
+		subscribe(Water, "water.wet", DoWaterWet)
+	}
+	if (Beacon) {
+		subscribe(Beacon, "presence.not present", DoBeaconNotPresent)
+		subscribe(Beacon, "presence.present", DoBeaconPresent)
+	}
+	if (Presence) {
+		subscribe(Presence, "presence.not present", DoPresenceNotPresent)
+		subscribe(Presence, "presence.present", DoPresencePresent)
+	}
+	if (CODetector) {
+		subscribe(CODetector, "carbonMonoxide.clear", DoCODetectorClear)
+		subscribe(CODetector, "carbonMonoxide.detected", DoCODetectorDetected)
+		subscribe(CODetector, "carbonMonoxide.tested", DoCODetectorTested)
+	}
+	if (Smoke) {
+		subscribe(Smoke, "smoke.clear", DoSmokeClear)
+		subscribe(Smoke, "smoke.detected", DoSmokeDetected)
+		subscribe(Smoke, "smoke.tested", DoSmokeTested)
+	}
+	if (PowerSource) {
+		subscribe(PowerSource, "powerSource.battery", DoPowerSourceBattery)
+		subscribe(PowerSource, "powerSource.dc", DoPowerSourceDC)
+		subscribe(PowerSource, "powerSource.mains", DoPowerSourceMains)
+		subscribe(PowerSource, "powerSource.unknown", DoPowerSourceUnknown)
+	}
+	if (Door) {
+		subscribe(Door, "door.closed", DoDoorClosed)
+		subscribe(Door, "door.open", DoDoorOpen)
+		subscribe(Door, "door.unknown", DoDoorUnknown)
+	}
+	if (Valve) {
+		subscribe(Valve, "contact.closed", DoValveClosed)
+		subscribe(Valve, "contact.open", DoValveOpen)
+	}
+	if (Shade) {
+		subscribe(Shade, "windowShade.closed", DoShadeClosed)
+		subscribe(Shade, "windowShade.open", DoShadeOpen)
+		subscribe(Shade, "windowShade.partially open", DoShadePartiallyOpen)
+		subscribe(Shade, "windowShade.unknown", DoShadeUnknown)
+	}
+	if (Temperature) {subscribe(Temperature, "temperature", DoTemperature)}
+	if (PowerMeter) {subscribe(PowerMeter, "powerMeter", DoPowerMeter)}
+	if (Battery) {subscribe(Battery, "battery", DoBattery)}
+	if (Voltage) {subscribe(Voltage, "voltage", DoVoltage)}
+	if (EnergyMeter) {subscribe(EnergyMeter, "energy", DoEnergyMeter)}
+	if (CO2Measurement) {subscribe(CO2Measurement, "carbonDioxide", DoCO2Measurement)}
+	if (Step) {
+		subscribe(Step, "steps", DoStep)
+		if (StepGoal) {subscribe(Step, "goal", DoStepGoal)}
+	}
+	if (Illuminance) {subscribe(Illuminance, "illuminance", DoIlluminance)}
+	if (Humidity) {subscribe(Humidity, "humidity", DoHumidity)}
+	if (UltravioletIndex) {subscribe(UltravioletIndex, "ultravioletIndex", DoUltravioletIndex)}
+	if (phMeasurement) {subscribe(phMeasurement, "pH", DophMeasurement)}
+	if (soundPressureLevel) {subscribe(soundPressureLevel, "soundPressureLevel", DosoundPressureLevel)}
 }
 
 def Triggers() {
@@ -1382,1571 +1380,1685 @@ def NametheApp() {
 }
 
 def DoContactOpen(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Contact.size(); i++) {
-		if ( evt.deviceId == Contact[i].id ) {
-			Changed = Contact[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Contact.size(); i++) {
+			if ( evt.deviceId == Contact[i].id ) {
+				Changed = Contact[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["ContactOpen${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} | Number = $Number | Actions = ${settings["ContactOpen${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["ContactOpen${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["ContactOpen${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["ContactOpen${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} | Number = $Number | Actions = ${settings["ContactOpen${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["ContactOpen${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["ContactOpen${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoContactClosed(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Contact.size(); i++) {
-		if ( evt.deviceId == Contact[i].id ) {
-			Changed = Contact[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Contact.size(); i++) {
+			if ( evt.deviceId == Contact[i].id ) {
+				Changed = Contact[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["ContactClosed${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["ContactClosed${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["ContactClosed${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["ContactClosed${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["ContactClosed${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["ContactClosed${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["ContactClosed${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["ContactClosed${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoSwitchOn(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Switch.size(); i++) {
-		if ( evt.deviceId == Switch[i].id ) {
-			Changed = Switch[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Switch.size(); i++) {
+			if ( evt.deviceId == Switch[i].id ) {
+				Changed = Switch[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["SwitchOn${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["SwitchOn${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["SwitchOn${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["SwitchOn${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["SwitchOn${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["SwitchOn${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["SwitchOn${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["SwitchOn${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoSwitchOff(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Switch.size(); i++) {
-		if ( evt.deviceId == Switch[i].id ) {
-			Changed = Switch[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Switch.size(); i++) {
+			if ( evt.deviceId == Switch[i].id ) {
+				Changed = Switch[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["SwitchOff${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["SwitchOff${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["SwitchOff${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["SwitchOff${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["SwitchOff${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["SwitchOff${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["SwitchOff${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["SwitchOff${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoAccelerationActive(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Acceleration.size(); i++) {
-		if ( evt.deviceId == Acceleration[i].id ) {
-			Changed = Acceleration[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Acceleration.size(); i++) {
+			if ( evt.deviceId == Acceleration[i].id ) {
+				Changed = Acceleration[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["AccelerationActive${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["AccelerationActive${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["AccelerationActive${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["AccelerationActive${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["AccelerationActive${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["AccelerationActive${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["AccelerationActive${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["AccelerationActive${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoAccelerationInactive(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Acceleration.size(); i++) {
-		if ( evt.deviceId == Acceleration[i].id ) {
-			Changed = Acceleration[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Acceleration.size(); i++) {
+			if ( evt.deviceId == Acceleration[i].id ) {
+				Changed = Acceleration[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["AccelerationInactive${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["AccelerationInactive${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["AccelerationInactive${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["AccelerationInactive${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["AccelerationInactive${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["AccelerationInactive${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["AccelerationInactive${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["AccelerationInactive${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoMotionActive(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Motion.size(); i++) {
-		if ( evt.deviceId == Motion[i].id ) {
-			Changed = Motion[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Motion.size(); i++) {
+			if ( evt.deviceId == Motion[i].id ) {
+				Changed = Motion[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["MotionActive${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["MotionActive${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["MotionActive${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["MotionActive${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["MotionActive${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["MotionActive${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["MotionActive${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["MotionActive${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoMotionInactive(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Motion.size(); i++) {
-		if ( evt.deviceId == Motion[i].id ) {
-			Changed = Motion[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Motion.size(); i++) {
+			if ( evt.deviceId == Motion[i].id ) {
+				Changed = Motion[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["MotionInactive${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["MotionInactive${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["MotionInactive${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["MotionInactive${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["MotionInactive${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["MotionInactive${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["MotionInactive${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["MotionInactive${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoTamperClear(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Tamper.size(); i++) {
-		if ( evt.deviceId == Tamper[i].id ) {
-			Changed = Tamper[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Tamper.size(); i++) {
+			if ( evt.deviceId == Tamper[i].id ) {
+				Changed = Tamper[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["TamperClear${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["TamperClear${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["TamperClear${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["TamperClear${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["TamperClear${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["TamperClear${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["TamperClear${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["TamperClear${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoTamperDetected(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Tamper.size(); i++) {
-		if ( evt.deviceId == Tamper[i].id ) {
-			Changed = Tamper[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Tamper.size(); i++) {
+			if ( evt.deviceId == Tamper[i].id ) {
+				Changed = Tamper[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["TamperDetected${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["TamperDetected${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["TamperDetected${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["TamperDetected${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["TamperDetected${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["TamperDetected${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["TamperDetected${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["TamperDetected${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoShockClear(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Shock.size(); i++) {
-		if ( evt.deviceId == Shock[i].id ) {
-			Changed = Shock[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Shock.size(); i++) {
+			if ( evt.deviceId == Shock[i].id ) {
+				Changed = Shock[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["ShockClear${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["ShockClear${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["ShockClear${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["ShockClear${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["ShockClear${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["ShockClear${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["ShockClear${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["ShockClear${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoShockDetected(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Shock.size(); i++) {
-		if ( evt.deviceId == Shock[i].id ) {
-			Changed = Shock[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Shock.size(); i++) {
+			if ( evt.deviceId == Shock[i].id ) {
+				Changed = Shock[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["ShockDetected${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["ShockDetected${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["ShockDetected${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["ShockDetected${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["ShockDetected${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["ShockDetected${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["ShockDetected${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["ShockDetected${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoSleepNotSleeping(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Sleep.size(); i++) {
-		if ( evt.deviceId == Sleep[i].id ) {
-			Changed = Sleep[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Sleep.size(); i++) {
+			if ( evt.deviceId == Sleep[i].id ) {
+				Changed = Sleep[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["SleepNotSleeping${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["SleepNotSleeping${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["SleepNotSleeping${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["SleepNotSleeping${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["SleepNotSleeping${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["SleepNotSleeping${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["SleepNotSleeping${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["SleepNotSleeping${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoSleepSleeping(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Sleep.size(); i++) {
-		if ( evt.deviceId == Sleep[i].id ) {
-			Changed = Sleep[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Sleep.size(); i++) {
+			if ( evt.deviceId == Sleep[i].id ) {
+				Changed = Sleep[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["SleepSleeping${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["SleepSleeping${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["SleepSleeping${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["SleepSleeping${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["SleepSleeping${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["SleepSleeping${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["SleepSleeping${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["SleepSleeping${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoSoundDetected(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Sound.size(); i++) {
-		if ( evt.deviceId == Sound[i].id ) {
-			Changed = Sound[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Sound.size(); i++) {
+			if ( evt.deviceId == Sound[i].id ) {
+				Changed = Sound[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["SoundDetected${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["SoundDetected${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["SoundDetected${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["SoundDetected${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["SoundDetected${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["SoundDetected${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["SoundDetected${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["SoundDetected${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoSoundNotDetected(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Sound.size(); i++) {
-		if ( evt.deviceId == Sound[i].id ) {
-			Changed = Sound[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Sound.size(); i++) {
+			if ( evt.deviceId == Sound[i].id ) {
+				Changed = Sound[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["SoundNotDetected${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["SoundNotDetected${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["SoundNotDetected${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["SoundNotDetected${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["SoundNotDetected${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["SoundNotDetected${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["SoundNotDetected${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["SoundNotDetected${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoTouched(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Touch.size(); i++) {
-		if ( evt.deviceId == Touch[i].id ) {
-			Changed = Touch[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Touch.size(); i++) {
+			if ( evt.deviceId == Touch[i].id ) {
+				Changed = Touch[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["Touched${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["Touched${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["Touched${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["Touched${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["Touched${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["Touched${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["Touched${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["Touched${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoWaterDry(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Water.size(); i++) {
-		if ( evt.deviceId == Water[i].id ) {
-			Changed = Water[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Water.size(); i++) {
+			if ( evt.deviceId == Water[i].id ) {
+				Changed = Water[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["WaterDry${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["WaterDry${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["WaterDry${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["WaterDry${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["WaterDry${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["WaterDry${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["WaterDry${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["WaterDry${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoWaterWet(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Water.size(); i++) {
-		if ( evt.deviceId == Water[i].id ) {
-			Changed = Water[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Water.size(); i++) {
+			if ( evt.deviceId == Water[i].id ) {
+				Changed = Water[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["WaterWet${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["WaterWet${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["WaterWet${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["WaterWet${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["WaterWet${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["WaterWet${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["WaterWet${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["WaterWet${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoBeaconNotPresent(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Beacon.size(); i++) {
-		if ( evt.deviceId == Beacon[i].id ) {
-			Changed = Beacon[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Beacon.size(); i++) {
+			if ( evt.deviceId == Beacon[i].id ) {
+				Changed = Beacon[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["BeaconNotPresent${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["BeaconNotPresent${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["BeaconNotPresent${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["BeaconNotPresent${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
-		}
-	}
-	if (settings["BeaconAllAway"]) {
-		boolean AllAway = true
-		Beacon.each {
-			//log.debug "$it = ${it.currentValue("presence")}"
-			if (it.currentValue("presence") == "present") {AllAway = false}
-		}
-		//log.debug "AllAway = $AllAway"
-		if (AllAway) {
-			log.debug "Device that triggered the event: ${Changed.displayName} | Number = $Number | Actions = $BeaconAllAway"
-			for ( def i = 0; i < BeaconAllAway.size(); i++) {
-				SelectionArray[i] = BeaconAllAway[i].tokenize(":")
+		if (settings["BeaconNotPresent${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["BeaconNotPresent${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["BeaconNotPresent${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["BeaconNotPresent${evt.deviceId}"][i].tokenize(":")
 				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
 				SwitchSelection(SelectionArray[i])
+			}
+		}
+		if (settings["BeaconAllAway"]) {
+			boolean AllAway = true
+			Beacon.each {
+				//log.debug "$it = ${it.currentValue("presence")}"
+				if (it.currentValue("presence") == "present") {AllAway = false}
+			}
+			//log.debug "AllAway = $AllAway"
+			if (AllAway) {
+				log.debug "Device that triggered the event: ${Changed.displayName} | Number = $Number | Actions = $BeaconAllAway"
+				for ( def i = 0; i < BeaconAllAway.size(); i++) {
+					SelectionArray[i] = BeaconAllAway[i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
 	}
 }
 
 def DoBeaconPresent(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Beacon.size(); i++) {
-		if ( evt.deviceId == Beacon[i].id ) {
-			Changed = Beacon[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Beacon.size(); i++) {
+			if ( evt.deviceId == Beacon[i].id ) {
+				Changed = Beacon[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["BeaconPresent${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["BeaconPresent${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["BeaconPresent${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["BeaconPresent${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["BeaconPresent${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["BeaconPresent${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["BeaconPresent${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["BeaconPresent${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoPresenceNotPresent(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Presence.size(); i++) {
-		if ( evt.deviceId == Presence[i].id ) {
-			Changed = Presence[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Presence.size(); i++) {
+			if ( evt.deviceId == Presence[i].id ) {
+				Changed = Presence[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["PresenceNotPresent${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} | Number = $Number | Actions = ${settings["PresenceNotPresent${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["PresenceNotPresent${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["PresenceNotPresent${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
-		}
-	}
-	if (settings["PresenceAllAway"]) {
-		boolean AllAway = true
-		Presence.each {
-			//log.debug "$it = ${it.currentValue("presence")}"
-			if (it.currentValue("presence") == "present") {AllAway = false}
-		}
-		//log.debug "AllAway = $AllAway"
-		if (AllAway) {
-			log.debug "Device that triggered the event: ${Changed.displayName} | Number = $Number | Actions = $PresenceAllAway"
-			for ( def i = 0; i < PresenceAllAway.size(); i++) {
-				SelectionArray[i] = PresenceAllAway[i].tokenize(":")
+		if (settings["PresenceNotPresent${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} | Number = $Number | Actions = ${settings["PresenceNotPresent${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["PresenceNotPresent${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["PresenceNotPresent${evt.deviceId}"][i].tokenize(":")
 				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
 				SwitchSelection(SelectionArray[i])
+			}
+		}
+		if (settings["PresenceAllAway"]) {
+			boolean AllAway = true
+			Presence.each {
+				//log.debug "$it = ${it.currentValue("presence")}"
+				if (it.currentValue("presence") == "present") {AllAway = false}
+			}
+			//log.debug "AllAway = $AllAway"
+			if (AllAway) {
+				log.debug "Device that triggered the event: ${Changed.displayName} | Number = $Number | Actions = $PresenceAllAway"
+				for ( def i = 0; i < PresenceAllAway.size(); i++) {
+					SelectionArray[i] = PresenceAllAway[i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
 	}
 }
 
 def DoPresencePresent(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Presence.size(); i++) {
-		if ( evt.deviceId == Presence[i].id ) {
-			Changed = Presence[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Presence.size(); i++) {
+			if ( evt.deviceId == Presence[i].id ) {
+				Changed = Presence[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["PresencePresent${evt.deviceId}"]) {
-		log.debug "Found the device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["PresencePresent${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["PresencePresent${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["PresencePresent${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["PresencePresent${evt.deviceId}"]) {
+			log.debug "Found the device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["PresencePresent${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["PresencePresent${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["PresencePresent${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoCODetectorClear(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < CODetector.size(); i++) {
-		if ( evt.deviceId == CODetector[i].id ) {
-			Changed = CODetector[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < CODetector.size(); i++) {
+			if ( evt.deviceId == CODetector[i].id ) {
+				Changed = CODetector[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["CODetectorClear${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["CODetectorClear${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["CODetectorClear${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["CODetectorClear${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["CODetectorClear${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["CODetectorClear${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["CODetectorClear${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["CODetectorClear${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoCODetectorDetected(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < CODetector.size(); i++) {
-		if ( evt.deviceId == CODetector[i].id ) {
-			Changed = CODetector[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < CODetector.size(); i++) {
+			if ( evt.deviceId == CODetector[i].id ) {
+				Changed = CODetector[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["CODetectorDetected${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["CODetectorDetected${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["CODetectorDetected${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["CODetectorDetected${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["CODetectorDetected${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["CODetectorDetected${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["CODetectorDetected${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["CODetectorDetected${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoCODetectorTested(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < CODetector.size(); i++) {
-		if ( evt.deviceId == CODetector[i].id ) {
-			Changed = CODetector[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < CODetector.size(); i++) {
+			if ( evt.deviceId == CODetector[i].id ) {
+				Changed = CODetector[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["CODetectorTested${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["CODetectorTested${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["CODetectorTested${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["CODetectorTested${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["CODetectorTested${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["CODetectorTested${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["CODetectorTested${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["CODetectorTested${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoSmokeClear(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Smoke.size(); i++) {
-		if ( evt.deviceId == Smoke[i].id ) {
-			Changed = Smoke[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Smoke.size(); i++) {
+			if ( evt.deviceId == Smoke[i].id ) {
+				Changed = Smoke[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["SmokeClear${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["SmokeClear${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["SmokeClear${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["SmokeClear${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["SmokeClear${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["SmokeClear${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["SmokeClear${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["SmokeClear${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoSmokeDetected(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Smoke.size(); i++) {
-		if ( evt.deviceId == Smoke[i].id ) {
-			Changed = Smoke[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Smoke.size(); i++) {
+			if ( evt.deviceId == Smoke[i].id ) {
+				Changed = Smoke[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["SmokeDetected${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["SmokeDetected${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["SmokeDetected${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["SmokeDetected${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["SmokeDetected${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["SmokeDetected${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["SmokeDetected${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["SmokeDetected${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoSmokeTested(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Smoke.size(); i++) {
-		if ( evt.deviceId == Smoke[i].id ) {
-			Changed = Smoke[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Smoke.size(); i++) {
+			if ( evt.deviceId == Smoke[i].id ) {
+				Changed = Smoke[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["SmokeTested${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["SmokeTested${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["SmokeTested${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["SmokeTested${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["SmokeTested${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["SmokeTested${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["SmokeTested${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["SmokeTested${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoPowerSourceBattery(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < PowerSource.size(); i++) {
-		if ( evt.deviceId == PowerSource[i].id ) {
-			Changed = PowerSource[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < PowerSource.size(); i++) {
+			if ( evt.deviceId == PowerSource[i].id ) {
+				Changed = PowerSource[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["PowerSourceBattery${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["PowerSourceBattery${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["PowerSourceBattery${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["PowerSourceBattery${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["PowerSourceBattery${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["PowerSourceBattery${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["PowerSourceBattery${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["PowerSourceBattery${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoPowerSourceDC(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < PowerSource.size(); i++) {
-		if ( evt.deviceId == PowerSource[i].id ) {
-			Changed = PowerSource[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < PowerSource.size(); i++) {
+			if ( evt.deviceId == PowerSource[i].id ) {
+				Changed = PowerSource[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["PowerSourceDC${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["PowerSourceDC${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["PowerSourceDC${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["PowerSourceDC${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["PowerSourceDC${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["PowerSourceDC${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["PowerSourceDC${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["PowerSourceDC${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoPowerSourceMains(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < PowerSource.size(); i++) {
-		if ( evt.deviceId == PowerSource[i].id ) {
-			Changed = PowerSource[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < PowerSource.size(); i++) {
+			if ( evt.deviceId == PowerSource[i].id ) {
+				Changed = PowerSource[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["PowerSourceMains${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["PowerSourceMains${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["PowerSourceMains${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["PowerSourceMains${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["PowerSourceMains${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["PowerSourceMains${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["PowerSourceMains${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["PowerSourceMains${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoPowerSourceUnknown(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < PowerSource.size(); i++) {
-		if ( evt.deviceId == PowerSource[i].id ) {
-			Changed = PowerSource[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < PowerSource.size(); i++) {
+			if ( evt.deviceId == PowerSource[i].id ) {
+				Changed = PowerSource[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["PowerSourceUnknown${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["PowerSourceUnknown${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["PowerSourceUnknown${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["PowerSourceUnknown${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["PowerSourceUnknown${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["PowerSourceUnknown${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["PowerSourceUnknown${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["PowerSourceUnknown${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoDoorClosed(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Door.size(); i++) {
-		if ( evt.deviceId == Door[i].id ) {
-			Changed = Door[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Door.size(); i++) {
+			if ( evt.deviceId == Door[i].id ) {
+				Changed = Door[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["DoorClosed${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["DoorClosed${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["DoorClosed${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["DoorClosed${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["DoorClosed${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["DoorClosed${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["DoorClosed${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["DoorClosed${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoDoorOpen(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Door.size(); i++) {
-		if ( evt.deviceId == Door[i].id ) {
-			Changed = Door[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Door.size(); i++) {
+			if ( evt.deviceId == Door[i].id ) {
+				Changed = Door[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["DoorOpen${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["DoorOpen${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["DoorOpen${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["DoorOpen${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["DoorOpen${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["DoorOpen${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["DoorOpen${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["DoorOpen${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoDoorUnknown(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Door.size(); i++) {
-		if ( evt.deviceId == Door[i].id ) {
-			Changed = Door[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Door.size(); i++) {
+			if ( evt.deviceId == Door[i].id ) {
+				Changed = Door[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["DoorUnknown${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["DoorUnknown${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["DoorUnknown${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["DoorUnknown${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["DoorUnknown${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["DoorUnknown${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["DoorUnknown${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["DoorUnknown${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoValveClosed(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Valve.size(); i++) {
-		if ( evt.deviceId == Valve[i].id ) {
-			Changed = Valve[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Valve.size(); i++) {
+			if ( evt.deviceId == Valve[i].id ) {
+				Changed = Valve[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["ValveClosed${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["ValveClosed${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["ValveClosed${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["ValveClosed${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["ValveClosed${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["ValveClosed${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["ValveClosed${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["ValveClosed${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoValveOpen(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Valve.size(); i++) {
-		if ( evt.deviceId == Valve[i].id ) {
-			Changed = Valve[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Valve.size(); i++) {
+			if ( evt.deviceId == Valve[i].id ) {
+				Changed = Valve[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["ValveOpen${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["ValveOpen${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["ValveOpen${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["ValveOpen${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["ValveOpen${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["ValveOpen${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["ValveOpen${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["ValveOpen${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoShadeClosed(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Shade.size(); i++) {
-		if ( evt.deviceId == Shade[i].id ) {
-			Changed = Shade[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Shade.size(); i++) {
+			if ( evt.deviceId == Shade[i].id ) {
+				Changed = Shade[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["ShadeClosed${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["ShadeClosed${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["ShadeClosed${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["ShadeClosed${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["ShadeClosed${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["ShadeClosed${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["ShadeClosed${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["ShadeClosed${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoShadeOpen(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Shade.size(); i++) {
-		if ( evt.deviceId == Shade[i].id ) {
-			Changed = Shade[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Shade.size(); i++) {
+			if ( evt.deviceId == Shade[i].id ) {
+				Changed = Shade[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["ShadeOpen${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["ShadeOpen${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["ShadeOpen${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["ShadeOpen${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["ShadeOpen${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["ShadeOpen${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["ShadeOpen${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["ShadeOpen${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoShadePartiallyOpen(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Shade.size(); i++) {
-		if ( evt.deviceId == Shade[i].id ) {
-			Changed = Shade[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Shade.size(); i++) {
+			if ( evt.deviceId == Shade[i].id ) {
+				Changed = Shade[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["ShadePartiallyOpen${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["ShadePartiallyOpen${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["ShadePartiallyOpen${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["ShadePartiallyOpen${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["ShadePartiallyOpen${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["ShadePartiallyOpen${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["ShadePartiallyOpen${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["ShadePartiallyOpen${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoShadeUnknown(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Shade.size(); i++) {
-		if ( evt.deviceId == Shade[i].id ) {
-			Changed = Shade[i]
-			Number = i
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Shade.size(); i++) {
+			if ( evt.deviceId == Shade[i].id ) {
+				Changed = Shade[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["ShadeUnknown${evt.deviceId}"]) {
-		log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["ShadeUnknown${evt.deviceId}"]}"
-		for ( def i = 0; i < settings["ShadeUnknown${evt.deviceId}"].size(); i++) {
-			SelectionArray[i] = settings["ShadeUnknown${evt.deviceId}"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["ShadeUnknown${evt.deviceId}"]) {
+			log.debug "Device that triggered the event: ${Changed.displayName} Number = $Number | Actions = ${settings["ShadeUnknown${evt.deviceId}"]}"
+			for ( def i = 0; i < settings["ShadeUnknown${evt.deviceId}"].size(); i++) {
+				SelectionArray[i] = settings["ShadeUnknown${evt.deviceId}"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoTemperature(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Temperature.size(); i++) {
-		if ( evt.deviceId == Temperature[i].id ) {
-			Changed = Temperature[i]
-			Number = i
-		}
-	}
-	int CurrentTemp = Changed.currentValue("temperature") as Integer
-	if (settings["HighActions${evt.deviceId}"]) {
-		int HighSetting = settings["HighThreshold${evt.deviceId}"] as Integer
-		if (CurrentTemp > HighSetting) {
-			for ( def i = 0; i < settings["HighActions${evt.deviceId}"].size(); i++) {
-				SelectionArray[i] = settings["HighActions${evt.deviceId}"][i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Temperature.size(); i++) {
+			if ( evt.deviceId == Temperature[i].id ) {
+				Changed = Temperature[i]
+				Number = i
 			}
 		}
-	}
-	if (settings["LowActions${evt.deviceId}"]) {
-		int LowSetting = settings["LowThreshold${evt.deviceId}"] as Integer
-		if (CurrentTemp < LowSetting) {
-			for ( def i = 0; i < settings["LowActions${evt.deviceId}"].size(); i++) {
-				SelectionArray[i] = settings["LowActions${evt.deviceId}"][i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		int CurrentTemp = Changed.currentValue("temperature") as Integer
+		if (settings["HighActions${evt.deviceId}"]) {
+			int HighSetting = settings["HighThreshold${evt.deviceId}"] as Integer
+			if (CurrentTemp > HighSetting) {
+				for ( def i = 0; i < settings["HighActions${evt.deviceId}"].size(); i++) {
+					SelectionArray[i] = settings["HighActions${evt.deviceId}"][i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
-	}
-	if (AllHighActions) {
-		int HighSetting = AllHighThreshold as Integer
-		if (CurrentTemp > HighSetting) {
-			for ( def i = 0; i < AllHighActions.size(); i++) {
-				SelectionArray[i] = AllHighActions[i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		if (settings["LowActions${evt.deviceId}"]) {
+			int LowSetting = settings["LowThreshold${evt.deviceId}"] as Integer
+			if (CurrentTemp < LowSetting) {
+				for ( def i = 0; i < settings["LowActions${evt.deviceId}"].size(); i++) {
+					SelectionArray[i] = settings["LowActions${evt.deviceId}"][i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
-	}
-	if (AllLowActions) {
-		int LowSetting = AllLowThreshold as Integer
-		if (CurrentTemp < LowSetting) {
-			for ( def i = 0; i < AllLowActions.size(); i++) {
-				SelectionArray[i] = AllLowActions[i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		if (AllHighActions) {
+			int HighSetting = AllHighThreshold as Integer
+			if (CurrentTemp > HighSetting) {
+				for ( def i = 0; i < AllHighActions.size(); i++) {
+					SelectionArray[i] = AllHighActions[i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
+			}
+		}
+		if (AllLowActions) {
+			int LowSetting = AllLowThreshold as Integer
+			if (CurrentTemp < LowSetting) {
+				for ( def i = 0; i < AllLowActions.size(); i++) {
+					SelectionArray[i] = AllLowActions[i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
 	}
 }
 
 def DoPowerMeter(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < PowerMeter.size(); i++) {
-		if ( evt.deviceId == PowerMeter[i].id ) {
-			Changed = PowerMeter[i]
-			Number = i
-		}
-	}
-	int Currentstate = Changed.currentValue("power") as Integer
-	if (settings["PowerMeterHighActions${evt.deviceId}"]) {
-		int HighSetting = settings["PowerMeterHighThreshold${evt.deviceId}"] as Integer
-		if (Currentstate > HighSetting) {
-			for ( def i = 0; i < settings["PowerMeterHighActions${evt.deviceId}"].size(); i++) {
-				SelectionArray[i] = settings["PowerMeterHighActions${evt.deviceId}"][i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < PowerMeter.size(); i++) {
+			if ( evt.deviceId == PowerMeter[i].id ) {
+				Changed = PowerMeter[i]
+				Number = i
 			}
 		}
-	}
-	if (settings["PowerMeterLowActions${evt.deviceId}"]) {
-		int LowSetting = settings["PowerMeterLowThreshold${evt.deviceId}"] as Integer
-		if (Currentstate < LowSetting) {
-			for ( def i = 0; i < settings["PowerMeterLowActions${evt.deviceId}"].size(); i++) {
-				SelectionArray[i] = settings["PowerMeterLowActions${evt.deviceId}"][i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		int Currentstate = Changed.currentValue("power") as Integer
+		if (settings["PowerMeterHighActions${evt.deviceId}"]) {
+			int HighSetting = settings["PowerMeterHighThreshold${evt.deviceId}"] as Integer
+			if (Currentstate > HighSetting) {
+				for ( def i = 0; i < settings["PowerMeterHighActions${evt.deviceId}"].size(); i++) {
+					SelectionArray[i] = settings["PowerMeterHighActions${evt.deviceId}"][i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
-	}
-	if (AllPowerMeterHighActions) {
-		int HighSetting = AllPowerMeterHighThreshold as Integer
-		if (CurrentTemp > HighSetting) {
-			for ( def i = 0; i < AllPowerMeterHighActions.size(); i++) {
-				SelectionArray[i] = AllPowerMeterHighActions[i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		if (settings["PowerMeterLowActions${evt.deviceId}"]) {
+			int LowSetting = settings["PowerMeterLowThreshold${evt.deviceId}"] as Integer
+			if (Currentstate < LowSetting) {
+				for ( def i = 0; i < settings["PowerMeterLowActions${evt.deviceId}"].size(); i++) {
+					SelectionArray[i] = settings["PowerMeterLowActions${evt.deviceId}"][i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
-	}
-	if (AllPowerMeterLowActions) {
-		int LowSetting = AllPowerMeterLowThreshold as Integer
-		if (CurrentTemp < LowSetting) {
-			for ( def i = 0; i < AllPowerMeterLowActions.size(); i++) {
-				SelectionArray[i] = AllPowerMeterLowActions[i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		if (AllPowerMeterHighActions) {
+			int HighSetting = AllPowerMeterHighThreshold as Integer
+			if (CurrentTemp > HighSetting) {
+				for ( def i = 0; i < AllPowerMeterHighActions.size(); i++) {
+					SelectionArray[i] = AllPowerMeterHighActions[i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
+			}
+		}
+		if (AllPowerMeterLowActions) {
+			int LowSetting = AllPowerMeterLowThreshold as Integer
+			if (CurrentTemp < LowSetting) {
+				for ( def i = 0; i < AllPowerMeterLowActions.size(); i++) {
+					SelectionArray[i] = AllPowerMeterLowActions[i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
 	}
 }
 
 def DoBattery(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Battery.size(); i++) {
-		if ( evt.deviceId == Battery[i].id ) {
-			Changed = Battery[i]
-			Number = i
-		}
-	}
-	int Currentstate = Changed.currentValue("battery") as Integer
-	if (settings["BatteryLowActions${evt.deviceId}"]) {
-		int LowSetting = settings["BatteryLowThreshold${evt.deviceId}"] as Integer
-		if (Currentstate < LowSetting) {
-			if (SendBatteryPush) sendPush("$Changed battery level is $Currentstate which is below the threshold you have set")
-			if (SendBatterySMSPhone != null) {
-				if ( SendBatterySMSPhone.indexOf(";") > 1){
-						def SendBatterySMSPhone = SendBatterySMSPhone.split(";")
-						for ( def i = 0; i < SendBatterySMSPhone.size(); i++) {
-							log.debug "Sending an SMS to ${SendBatterySMSPhone[i]}"
-							sendSms(SendBatterySMSPhone[i] as String, SMSMessage ?:"Siren & Strobe activated")
-						}
-					} else {
-						log.debug "Sending an SMS to ${SendBatterySMSPhone}"
-						sendSms(SendBatterySMSPhone as String, "$Changed battery level is $Currentstate which is below the threshold you have set")
-				}
-			}
-			for ( def i = 0; i < settings["BatteryLowActions${evt.deviceId}"].size(); i++) {
-				SelectionArray[i] = settings["BatteryLowActions${evt.deviceId}"][i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Battery.size(); i++) {
+			if ( evt.deviceId == Battery[i].id ) {
+				Changed = Battery[i]
+				Number = i
 			}
 		}
-	}
-	if (AllBatteryLowActions) {
-		int LowSetting = AllBatteryLowThreshold as Integer
-		if (Currentstate < LowSetting) {
-			if (SendBatteryPush) sendPush("$Changed battery level is $Currentstate which is below the threshold you have set")
-			if (SendBatterySMSPhone != null) {
-				if ( SendBatterySMSPhone.indexOf(";") > 1){
-						def SendBatterySMSPhone = SendBatterySMSPhone.split(";")
-						for ( def i = 0; i < SendBatterySMSPhone.size(); i++) {
-							log.debug "Sending an SMS to ${SendBatterySMSPhone[i]}"
-							sendSms(SendBatterySMSPhone[i] as String, SMSMessage ?:"Siren & Strobe activated")
-						}
-					} else {
-						log.debug "Sending an SMS to ${SendBatterySMSPhone}"
-						sendSms(SendBatterySMSPhone as String, "$Changed battery level is $Currentstate which is below the threshold you have set")
+		int Currentstate = Changed.currentValue("battery") as Integer
+		if (settings["BatteryLowActions${evt.deviceId}"]) {
+			int LowSetting = settings["BatteryLowThreshold${evt.deviceId}"] as Integer
+			if (Currentstate < LowSetting) {
+				if (SendBatteryPush) sendPush("$Changed battery level is $Currentstate which is below the threshold you have set")
+				if (SendBatterySMSPhone != null) {
+					if ( SendBatterySMSPhone.indexOf(";") > 1){
+							def SendBatterySMSPhone = SendBatterySMSPhone.split(";")
+							for ( def i = 0; i < SendBatterySMSPhone.size(); i++) {
+								log.debug "Sending an SMS to ${SendBatterySMSPhone[i]}"
+								sendSms(SendBatterySMSPhone[i] as String, SMSMessage ?:"Siren & Strobe activated")
+							}
+						} else {
+							log.debug "Sending an SMS to ${SendBatterySMSPhone}"
+							sendSms(SendBatterySMSPhone as String, "$Changed battery level is $Currentstate which is below the threshold you have set")
+					}
+				}
+				for ( def i = 0; i < settings["BatteryLowActions${evt.deviceId}"].size(); i++) {
+					SelectionArray[i] = settings["BatteryLowActions${evt.deviceId}"][i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
 				}
 			}
-			for ( def i = 0; i < AllBatteryLowActions.size(); i++) {
-				SelectionArray[i] = AllBatteryLowActions[i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		}
+		if (AllBatteryLowActions) {
+			int LowSetting = AllBatteryLowThreshold as Integer
+			if (Currentstate < LowSetting) {
+				if (SendBatteryPush) sendPush("$Changed battery level is $Currentstate which is below the threshold you have set")
+				if (SendBatterySMSPhone != null) {
+					if ( SendBatterySMSPhone.indexOf(";") > 1){
+							def SendBatterySMSPhone = SendBatterySMSPhone.split(";")
+							for ( def i = 0; i < SendBatterySMSPhone.size(); i++) {
+								log.debug "Sending an SMS to ${SendBatterySMSPhone[i]}"
+								sendSms(SendBatterySMSPhone[i] as String, SMSMessage ?:"Siren & Strobe activated")
+							}
+						} else {
+							log.debug "Sending an SMS to ${SendBatterySMSPhone}"
+							sendSms(SendBatterySMSPhone as String, "$Changed battery level is $Currentstate which is below the threshold you have set")
+					}
+				}
+				for ( def i = 0; i < AllBatteryLowActions.size(); i++) {
+					SelectionArray[i] = AllBatteryLowActions[i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
 	}
 }
 
 def DoVoltage(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Voltage.size(); i++) {
-		if ( evt.deviceId == Voltage[i].id ) {
-			Changed = Voltage[i]
-			Number = i
-		}
-	}
-	int Currentstate = Changed.currentValue("voltage") as Integer
-	if (settings["VoltageHighActions${evt.deviceId}"]) {
-		int HighSetting = settings["VoltageHighThreshold${evt.deviceId}"] as Integer
-		if (Currentstate > HighSetting) {
-			for ( def i = 0; i < settings["VoltageHighActions${evt.deviceId}"].size(); i++) {
-				SelectionArray[i] = settings["VoltageHighActions${evt.deviceId}"][i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Voltage.size(); i++) {
+			if ( evt.deviceId == Voltage[i].id ) {
+				Changed = Voltage[i]
+				Number = i
 			}
 		}
-	}
-	if (settings["VoltageLowActions${evt.deviceId}"]) {
-		int LowSetting = settings["VoltageLowThreshold${evt.deviceId}"] as Integer
-		if (Currentstate < LowSetting) {
-			for ( def i = 0; i < settings["VoltageLowActions${evt.deviceId}"].size(); i++) {
-				SelectionArray[i] = settings["VoltageLowActions${evt.deviceId}"][i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		int Currentstate = Changed.currentValue("voltage") as Integer
+		if (settings["VoltageHighActions${evt.deviceId}"]) {
+			int HighSetting = settings["VoltageHighThreshold${evt.deviceId}"] as Integer
+			if (Currentstate > HighSetting) {
+				for ( def i = 0; i < settings["VoltageHighActions${evt.deviceId}"].size(); i++) {
+					SelectionArray[i] = settings["VoltageHighActions${evt.deviceId}"][i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
-	}
-	if (AllVoltageHighActions) {
-		int HighSetting = AllVoltageHighThreshold as Integer
-		if (CurrentTemp > HighSetting) {
-			for ( def i = 0; i < AllVoltageHighActions.size(); i++) {
-				SelectionArray[i] = AllVoltageHighActions[i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		if (settings["VoltageLowActions${evt.deviceId}"]) {
+			int LowSetting = settings["VoltageLowThreshold${evt.deviceId}"] as Integer
+			if (Currentstate < LowSetting) {
+				for ( def i = 0; i < settings["VoltageLowActions${evt.deviceId}"].size(); i++) {
+					SelectionArray[i] = settings["VoltageLowActions${evt.deviceId}"][i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
-	}
-	if (AllVoltageLowActions) {
-		int LowSetting = AllVoltageLowThreshold as Integer
-		if (CurrentTemp < LowSetting) {
-			for ( def i = 0; i < AllVoltageLowActions.size(); i++) {
-				SelectionArray[i] = AllVoltageLowActions[i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		if (AllVoltageHighActions) {
+			int HighSetting = AllVoltageHighThreshold as Integer
+			if (CurrentTemp > HighSetting) {
+				for ( def i = 0; i < AllVoltageHighActions.size(); i++) {
+					SelectionArray[i] = AllVoltageHighActions[i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
+			}
+		}
+		if (AllVoltageLowActions) {
+			int LowSetting = AllVoltageLowThreshold as Integer
+			if (CurrentTemp < LowSetting) {
+				for ( def i = 0; i < AllVoltageLowActions.size(); i++) {
+					SelectionArray[i] = AllVoltageLowActions[i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
 	}
 }
 
 def DoEnergyMeter(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < EnergyMeter.size(); i++) {
-		if ( evt.deviceId == EnergyMeter[i].id ) {
-			Changed = EnergyMeter[i]
-			Number = i
-		}
-	}
-	int Currentstate = Changed.currentValue("energy") as Integer
-	if (settings["EnergyMeterHighActions${evt.deviceId}"]) {
-		int HighSetting = settings["EnergyMeterHighThreshold${evt.deviceId}"] as Integer
-		if (Currentstate > HighSetting) {
-			for ( def i = 0; i < settings["EnergyMeterHighActions${evt.deviceId}"].size(); i++) {
-				SelectionArray[i] = settings["EnergyMeterHighActions${evt.deviceId}"][i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < EnergyMeter.size(); i++) {
+			if ( evt.deviceId == EnergyMeter[i].id ) {
+				Changed = EnergyMeter[i]
+				Number = i
 			}
 		}
-	}
-	if (settings["EnergyMeterLowActions${evt.deviceId}"]) {
-		int LowSetting = settings["EnergyMeterLowThreshold${evt.deviceId}"] as Integer
-		if (Currentstate < LowSetting) {
-			for ( def i = 0; i < settings["EnergyMeterLowActions${evt.deviceId}"].size(); i++) {
-				SelectionArray[i] = settings["EnergyMeterLowActions${evt.deviceId}"][i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		int Currentstate = Changed.currentValue("energy") as Integer
+		if (settings["EnergyMeterHighActions${evt.deviceId}"]) {
+			int HighSetting = settings["EnergyMeterHighThreshold${evt.deviceId}"] as Integer
+			if (Currentstate > HighSetting) {
+				for ( def i = 0; i < settings["EnergyMeterHighActions${evt.deviceId}"].size(); i++) {
+					SelectionArray[i] = settings["EnergyMeterHighActions${evt.deviceId}"][i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
-	}
-	if (AllEnergyMeterHighActions) {
-		int HighSetting = AllEnergyMeterHighThreshold as Integer
-		if (CurrentTemp > HighSetting) {
-			for ( def i = 0; i < AllEnergyMeterHighActions.size(); i++) {
-				SelectionArray[i] = AllEnergyMeterHighActions[i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		if (settings["EnergyMeterLowActions${evt.deviceId}"]) {
+			int LowSetting = settings["EnergyMeterLowThreshold${evt.deviceId}"] as Integer
+			if (Currentstate < LowSetting) {
+				for ( def i = 0; i < settings["EnergyMeterLowActions${evt.deviceId}"].size(); i++) {
+					SelectionArray[i] = settings["EnergyMeterLowActions${evt.deviceId}"][i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
-	}
-	if (AllEnergyMeterLowActions) {
-		int LowSetting = AllEnergyMeterLowThreshold as Integer
-		if (CurrentTemp < LowSetting) {
-			for ( def i = 0; i < AllEnergyMeterLowActions.size(); i++) {
-				SelectionArray[i] = AllEnergyMeterLowActions[i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		if (AllEnergyMeterHighActions) {
+			int HighSetting = AllEnergyMeterHighThreshold as Integer
+			if (CurrentTemp > HighSetting) {
+				for ( def i = 0; i < AllEnergyMeterHighActions.size(); i++) {
+					SelectionArray[i] = AllEnergyMeterHighActions[i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
+			}
+		}
+		if (AllEnergyMeterLowActions) {
+			int LowSetting = AllEnergyMeterLowThreshold as Integer
+			if (CurrentTemp < LowSetting) {
+				for ( def i = 0; i < AllEnergyMeterLowActions.size(); i++) {
+					SelectionArray[i] = AllEnergyMeterLowActions[i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
 	}
 }
 
 def DoCO2Measurement(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < CO2Measurement.size(); i++) {
-		if ( evt.deviceId == CO2Measurement[i].id ) {
-			Changed = CO2Measurement[i]
-			Number = i
-		}
-	}
-	int Currentstate = Changed.currentValue("carbonDioxide") as Integer
-	if (settings["CO2MeasurementHighActions${evt.deviceId}"]) {
-		int HighSetting = settings["CO2MeasurementHighThreshold${evt.deviceId}"] as Integer
-		if (Currentstate > HighSetting) {
-			for ( def i = 0; i < settings["CO2MeasurementHighActions${evt.deviceId}"].size(); i++) {
-				SelectionArray[i] = settings["CO2MeasurementHighActions${evt.deviceId}"][i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < CO2Measurement.size(); i++) {
+			if ( evt.deviceId == CO2Measurement[i].id ) {
+				Changed = CO2Measurement[i]
+				Number = i
 			}
 		}
-	}
-	if (AllCO2MeasurementHighActions) {
-		int HighSetting = AllCO2MeasurementHighThreshold as Integer
-		if (Currentstate > HighSetting) {
-			for ( def i = 0; i < AllCO2MeasurementHighActions.size(); i++) {
-				SelectionArray[i] = AllCO2MeasurementHighActions[i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		int Currentstate = Changed.currentValue("carbonDioxide") as Integer
+		if (settings["CO2MeasurementHighActions${evt.deviceId}"]) {
+			int HighSetting = settings["CO2MeasurementHighThreshold${evt.deviceId}"] as Integer
+			if (Currentstate > HighSetting) {
+				for ( def i = 0; i < settings["CO2MeasurementHighActions${evt.deviceId}"].size(); i++) {
+					SelectionArray[i] = settings["CO2MeasurementHighActions${evt.deviceId}"][i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
+			}
+		}
+		if (AllCO2MeasurementHighActions) {
+			int HighSetting = AllCO2MeasurementHighThreshold as Integer
+			if (Currentstate > HighSetting) {
+				for ( def i = 0; i < AllCO2MeasurementHighActions.size(); i++) {
+					SelectionArray[i] = AllCO2MeasurementHighActions[i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
 	}
 }
 
 def DoStep(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Step.size(); i++) {
-		if ( evt.deviceId == Step[i].id ) {
-			Changed = Step[i]
-			Number = i
-		}
-	}
-	int Currentstate = Changed.currentValue("steps") as Integer
-	if (settings["StepHighActions${evt.deviceId}"]) {
-		int HighSetting = settings["StepHighThreshold${evt.deviceId}"] as Integer
-		if (Currentstate > HighSetting) {
-			for ( def i = 0; i < settings["StepHighActions${evt.deviceId}"].size(); i++) {
-				SelectionArray[i] = settings["StepHighActions${evt.deviceId}"][i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Step.size(); i++) {
+			if ( evt.deviceId == Step[i].id ) {
+				Changed = Step[i]
+				Number = i
 			}
 		}
-	}
-	if (settings["StepLowActions${evt.deviceId}"]) {
-		int LowSetting = settings["StepLowThreshold${evt.deviceId}"] as Integer
-		if (Currentstate < LowSetting) {
-			for ( def i = 0; i < settings["StepLowActions${evt.deviceId}"].size(); i++) {
-				SelectionArray[i] = settings["StepLowActions${evt.deviceId}"][i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		int Currentstate = Changed.currentValue("steps") as Integer
+		if (settings["StepHighActions${evt.deviceId}"]) {
+			int HighSetting = settings["StepHighThreshold${evt.deviceId}"] as Integer
+			if (Currentstate > HighSetting) {
+				for ( def i = 0; i < settings["StepHighActions${evt.deviceId}"].size(); i++) {
+					SelectionArray[i] = settings["StepHighActions${evt.deviceId}"][i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
-	}
-	if (AllStepHighActions) {
-		int HighSetting = AllStepHighThreshold as Integer
-		if (Currentstate > HighSetting) {
-			for ( def i = 0; i < AllStepHighActions.size(); i++) {
-				SelectionArray[i] = AllStepHighActions[i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		if (settings["StepLowActions${evt.deviceId}"]) {
+			int LowSetting = settings["StepLowThreshold${evt.deviceId}"] as Integer
+			if (Currentstate < LowSetting) {
+				for ( def i = 0; i < settings["StepLowActions${evt.deviceId}"].size(); i++) {
+					SelectionArray[i] = settings["StepLowActions${evt.deviceId}"][i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
-	}
-	if (AllStepLowActions) {
-		int LowSetting = AllStepLowThreshold as Integer
-		if (Currentstate < LowSetting) {
-			for ( def i = 0; i < AllStepLowActions.size(); i++) {
-				SelectionArray[i] = AllStepLowActions[i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		if (AllStepHighActions) {
+			int HighSetting = AllStepHighThreshold as Integer
+			if (Currentstate > HighSetting) {
+				for ( def i = 0; i < AllStepHighActions.size(); i++) {
+					SelectionArray[i] = AllStepHighActions[i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
+			}
+		}
+		if (AllStepLowActions) {
+			int LowSetting = AllStepLowThreshold as Integer
+			if (Currentstate < LowSetting) {
+				for ( def i = 0; i < AllStepLowActions.size(); i++) {
+					SelectionArray[i] = AllStepLowActions[i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
 	}
 }
 
 def DoStepGoal(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Step.size(); i++) {
-		if ( evt.deviceId == Step[i].id ) {
-			Changed = Step[i]
-			Number = i
-		}
-	}
-	int Currentstate = Changed.currentValue("goal") as Integer
-	if (settings["StepGoalActions${evt.deviceId}"]) {
-		int HighSetting = settings["StepGoal${evt.deviceId}"] as Integer
-		if (Currentstate >= HighSetting) {
-			for ( def i = 0; i < settings["StepGoalActions${evt.deviceId}"].size(); i++) {
-				SelectionArray[i] = settings["StepGoalActions${evt.deviceId}"][i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Step.size(); i++) {
+			if ( evt.deviceId == Step[i].id ) {
+				Changed = Step[i]
+				Number = i
 			}
 		}
-	}
-	if (AllStepGoalActions) {
-		int HighSetting = AllStepGoalThreshold as Integer
-		if (Currentstate >= HighSetting) {
-			for ( def i = 0; i < AllStepGoalActions.size(); i++) {
-				SelectionArray[i] = AllStepGoalActions[i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		int Currentstate = Changed.currentValue("goal") as Integer
+		if (settings["StepGoalActions${evt.deviceId}"]) {
+			int HighSetting = settings["StepGoal${evt.deviceId}"] as Integer
+			if (Currentstate >= HighSetting) {
+				for ( def i = 0; i < settings["StepGoalActions${evt.deviceId}"].size(); i++) {
+					SelectionArray[i] = settings["StepGoalActions${evt.deviceId}"][i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
+			}
+		}
+		if (AllStepGoalActions) {
+			int HighSetting = AllStepGoalThreshold as Integer
+			if (Currentstate >= HighSetting) {
+				for ( def i = 0; i < AllStepGoalActions.size(); i++) {
+					SelectionArray[i] = AllStepGoalActions[i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
 	}
 }
 
 def DoIlluminance(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Illuminance.size(); i++) {
-		if ( evt.deviceId == Illuminance[i].id ) {
-			Changed = Illuminance[i]
-			Number = i
-		}
-	}
-	int Currentstate = Changed.currentValue("illuminance") as Integer
-	if (settings["IlluminanceHighActions${evt.deviceId}"]) {
-		int HighSetting = settings["IlluminanceHighThreshold${evt.deviceId}"] as Integer
-		if (Currentstate > HighSetting) {
-			for ( def i = 0; i < settings["IlluminanceHighActions${evt.deviceId}"].size(); i++) {
-				SelectionArray[i] = settings["IlluminanceHighActions${evt.deviceId}"][i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Illuminance.size(); i++) {
+			if ( evt.deviceId == Illuminance[i].id ) {
+				Changed = Illuminance[i]
+				Number = i
 			}
 		}
-	}
-	if (settings["IlluminanceLowActions${evt.deviceId}"]) {
-		int LowSetting = settings["IlluminanceLowThreshold${evt.deviceId}"] as Integer
-		if (Currentstate < LowSetting) {
-			for ( def i = 0; i < settings["IlluminanceLowActions${evt.deviceId}"].size(); i++) {
-				SelectionArray[i] = settings["IlluminanceLowActions${evt.deviceId}"][i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		int Currentstate = Changed.currentValue("illuminance") as Integer
+		if (settings["IlluminanceHighActions${evt.deviceId}"]) {
+			int HighSetting = settings["IlluminanceHighThreshold${evt.deviceId}"] as Integer
+			if (Currentstate > HighSetting) {
+				for ( def i = 0; i < settings["IlluminanceHighActions${evt.deviceId}"].size(); i++) {
+					SelectionArray[i] = settings["IlluminanceHighActions${evt.deviceId}"][i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
-	}
-	if (AllIlluminanceHighActions) {
-		int HighSetting = AllIlluminanceHighThreshold as Integer
-		if (Currentstate > HighSetting) {
-			for ( def i = 0; i < AllIlluminanceHighActions.size(); i++) {
-				SelectionArray[i] = AllIlluminanceHighActions[i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		if (settings["IlluminanceLowActions${evt.deviceId}"]) {
+			int LowSetting = settings["IlluminanceLowThreshold${evt.deviceId}"] as Integer
+			if (Currentstate < LowSetting) {
+				for ( def i = 0; i < settings["IlluminanceLowActions${evt.deviceId}"].size(); i++) {
+					SelectionArray[i] = settings["IlluminanceLowActions${evt.deviceId}"][i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
-	}
-	if (AllIlluminanceLowActions) {
-		int LowSetting = AllIlluminanceLowThreshold as Integer
-		if (Currentstate < LowSetting) {
-			for ( def i = 0; i < AllIlluminanceLowActions.size(); i++) {
-				SelectionArray[i] = AllIlluminanceLowActions[i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		if (AllIlluminanceHighActions) {
+			int HighSetting = AllIlluminanceHighThreshold as Integer
+			if (Currentstate > HighSetting) {
+				for ( def i = 0; i < AllIlluminanceHighActions.size(); i++) {
+					SelectionArray[i] = AllIlluminanceHighActions[i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
+			}
+		}
+		if (AllIlluminanceLowActions) {
+			int LowSetting = AllIlluminanceLowThreshold as Integer
+			if (Currentstate < LowSetting) {
+				for ( def i = 0; i < AllIlluminanceLowActions.size(); i++) {
+					SelectionArray[i] = AllIlluminanceLowActions[i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
 	}
 }
 
 def DoHumidity(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Humidity.size(); i++) {
-		if ( evt.deviceId == Humidity[i].id ) {
-			Changed = Humidity[i]
-			Number = i
-		}
-	}
-	int Currentstate = Changed.currentValue("humidity") as Integer
-	if (settings["HumidityHighActions${evt.deviceId}"]) {
-		int HighSetting = settings["HumidityHighThreshold${evt.deviceId}"] as Integer
-		if (Currentstate > HighSetting) {
-			for ( def i = 0; i < settings["HumidityHighActions${evt.deviceId}"].size(); i++) {
-				SelectionArray[i] = settings["HumidityHighActions${evt.deviceId}"][i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Humidity.size(); i++) {
+			if ( evt.deviceId == Humidity[i].id ) {
+				Changed = Humidity[i]
+				Number = i
 			}
 		}
-	}
-	if (settings["HumidityLowActions${evt.deviceId}"]) {
-		int LowSetting = settings["HumidityLowThreshold${evt.deviceId}"] as Integer
-		if (Currentstate < LowSetting) {
-			for ( def i = 0; i < settings["HumidityLowActions${evt.deviceId}"].size(); i++) {
-				SelectionArray[i] = settings["HumidityLowActions${evt.deviceId}"][i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		int Currentstate = Changed.currentValue("humidity") as Integer
+		if (settings["HumidityHighActions${evt.deviceId}"]) {
+			int HighSetting = settings["HumidityHighThreshold${evt.deviceId}"] as Integer
+			if (Currentstate > HighSetting) {
+				for ( def i = 0; i < settings["HumidityHighActions${evt.deviceId}"].size(); i++) {
+					SelectionArray[i] = settings["HumidityHighActions${evt.deviceId}"][i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
-	}
-	if (AllHumidityHighActions) {
-		int HighSetting = AllHumidityHighThreshold as Integer
-		if (Currentstate > HighSetting) {
-			for ( def i = 0; i < AllHumidityHighActions.size(); i++) {
-				SelectionArray[i] = AllHumidityHighActions[i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		if (settings["HumidityLowActions${evt.deviceId}"]) {
+			int LowSetting = settings["HumidityLowThreshold${evt.deviceId}"] as Integer
+			if (Currentstate < LowSetting) {
+				for ( def i = 0; i < settings["HumidityLowActions${evt.deviceId}"].size(); i++) {
+					SelectionArray[i] = settings["HumidityLowActions${evt.deviceId}"][i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
-	}
-	if (AllHumidityLowActions) {
-		int LowSetting = AllHumidityLowThreshold as Integer
-		if (Currentstate < LowSetting) {
-			for ( def i = 0; i < AllHumidityLowActions.size(); i++) {
-				SelectionArray[i] = AllHumidityLowActions[i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		if (AllHumidityHighActions) {
+			int HighSetting = AllHumidityHighThreshold as Integer
+			if (Currentstate > HighSetting) {
+				for ( def i = 0; i < AllHumidityHighActions.size(); i++) {
+					SelectionArray[i] = AllHumidityHighActions[i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
+			}
+		}
+		if (AllHumidityLowActions) {
+			int LowSetting = AllHumidityLowThreshold as Integer
+			if (Currentstate < LowSetting) {
+				for ( def i = 0; i < AllHumidityLowActions.size(); i++) {
+					SelectionArray[i] = AllHumidityLowActions[i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
 	}
 }
 
 def DoUltravioletIndex(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < UltravioletIndex.size(); i++) {
-		if ( evt.deviceId == UltravioletIndex[i].id ) {
-			Changed = UltravioletIndex[i]
-			Number = i
-		}
-	}
-	int Currentstate = Changed.currentValue("ultravioletIndex") as Integer
-	if (settings["UltravioletIndexHighActions${evt.deviceId}"]) {
-		int HighSetting = settings["UltravioletIndexHighThreshold${evt.deviceId}"] as Integer
-		if (Currentstate > HighSetting) {
-			for ( def i = 0; i < settings["UltravioletIndexHighActions${evt.deviceId}"].size(); i++) {
-				SelectionArray[i] = settings["UltravioletIndexHighActions${evt.deviceId}"][i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < UltravioletIndex.size(); i++) {
+			if ( evt.deviceId == UltravioletIndex[i].id ) {
+				Changed = UltravioletIndex[i]
+				Number = i
 			}
 		}
-	}
-	if (settings["UltravioletIndexLowActions${evt.deviceId}"]) {
-		int LowSetting = settings["UltravioletIndexLowThreshold${evt.deviceId}"] as Integer
-		if (Currentstate < LowSetting) {
-			for ( def i = 0; i < settings["UltravioletIndexLowActions${evt.deviceId}"].size(); i++) {
-				SelectionArray[i] = settings["UltravioletIndexLowActions${evt.deviceId}"][i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		int Currentstate = Changed.currentValue("ultravioletIndex") as Integer
+		if (settings["UltravioletIndexHighActions${evt.deviceId}"]) {
+			int HighSetting = settings["UltravioletIndexHighThreshold${evt.deviceId}"] as Integer
+			if (Currentstate > HighSetting) {
+				for ( def i = 0; i < settings["UltravioletIndexHighActions${evt.deviceId}"].size(); i++) {
+					SelectionArray[i] = settings["UltravioletIndexHighActions${evt.deviceId}"][i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
-	}
-	if (AllUltravioletIndexHighActions) {
-		int HighSetting = AllUltravioletIndexHighThreshold as Integer
-		if (Currentstate > HighSetting) {
-			for ( def i = 0; i < AllUltravioletIndexHighActions.size(); i++) {
-				SelectionArray[i] = AllUltravioletIndexHighActions[i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		if (settings["UltravioletIndexLowActions${evt.deviceId}"]) {
+			int LowSetting = settings["UltravioletIndexLowThreshold${evt.deviceId}"] as Integer
+			if (Currentstate < LowSetting) {
+				for ( def i = 0; i < settings["UltravioletIndexLowActions${evt.deviceId}"].size(); i++) {
+					SelectionArray[i] = settings["UltravioletIndexLowActions${evt.deviceId}"][i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
-	}
-	if (AllUltravioletIndexLowActions) {
-		int LowSetting = AllUltravioletIndexLowThreshold as Integer
-		if (Currentstate < LowSetting) {
-			for ( def i = 0; i < AllUltravioletIndexLowActions.size(); i++) {
-				SelectionArray[i] = AllUltravioletIndexLowActions[i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		if (AllUltravioletIndexHighActions) {
+			int HighSetting = AllUltravioletIndexHighThreshold as Integer
+			if (Currentstate > HighSetting) {
+				for ( def i = 0; i < AllUltravioletIndexHighActions.size(); i++) {
+					SelectionArray[i] = AllUltravioletIndexHighActions[i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
+			}
+		}
+		if (AllUltravioletIndexLowActions) {
+			int LowSetting = AllUltravioletIndexLowThreshold as Integer
+			if (Currentstate < LowSetting) {
+				for ( def i = 0; i < AllUltravioletIndexLowActions.size(); i++) {
+					SelectionArray[i] = AllUltravioletIndexLowActions[i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
 	}
 }
 
 def DophMeasurement(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < phMeasurement.size(); i++) {
-		if ( evt.deviceId == phMeasurement[i].id ) {
-			Changed = phMeasurement[i]
-			Number = i
-		}
-	}
-	int Currentstate = Changed.currentValue("phMeasurement") as Integer
-	if (settings["phMeasurementHighActions${evt.deviceId}"]) {
-		int HighSetting = settings["phMeasurementHighThreshold${evt.deviceId}"] as Integer
-		if (Currentstate > HighSetting) {
-			for ( def i = 0; i < settings["phMeasurementHighActions${evt.deviceId}"].size(); i++) {
-				SelectionArray[i] = settings["phMeasurementHighActions${evt.deviceId}"][i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < phMeasurement.size(); i++) {
+			if ( evt.deviceId == phMeasurement[i].id ) {
+				Changed = phMeasurement[i]
+				Number = i
 			}
 		}
-	}
-	if (settings["phMeasurementLowActions${evt.deviceId}"]) {
-		int LowSetting = settings["phMeasurementLowThreshold${evt.deviceId}"] as Integer
-		if (Currentstate < LowSetting) {
-			for ( def i = 0; i < settings["phMeasurementLowActions${evt.deviceId}"].size(); i++) {
-				SelectionArray[i] = settings["phMeasurementLowActions${evt.deviceId}"][i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		int Currentstate = Changed.currentValue("phMeasurement") as Integer
+		if (settings["phMeasurementHighActions${evt.deviceId}"]) {
+			int HighSetting = settings["phMeasurementHighThreshold${evt.deviceId}"] as Integer
+			if (Currentstate > HighSetting) {
+				for ( def i = 0; i < settings["phMeasurementHighActions${evt.deviceId}"].size(); i++) {
+					SelectionArray[i] = settings["phMeasurementHighActions${evt.deviceId}"][i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
-	}
-	if (AllphMeasurementHighActions) {
-		int HighSetting = AllphMeasurementHighThreshold as Integer
-		if (Currentstate > HighSetting) {
-			for ( def i = 0; i < AllphMeasurementHighActions.size(); i++) {
-				SelectionArray[i] = AllphMeasurementHighActions[i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		if (settings["phMeasurementLowActions${evt.deviceId}"]) {
+			int LowSetting = settings["phMeasurementLowThreshold${evt.deviceId}"] as Integer
+			if (Currentstate < LowSetting) {
+				for ( def i = 0; i < settings["phMeasurementLowActions${evt.deviceId}"].size(); i++) {
+					SelectionArray[i] = settings["phMeasurementLowActions${evt.deviceId}"][i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
-	}
-	if (AllphMeasurementLowActions) {
-		int LowSetting = AllphMeasurementLowThreshold as Integer
-		if (Currentstate < LowSetting) {
-			for ( def i = 0; i < AllphMeasurementLowActions.size(); i++) {
-				SelectionArray[i] = AllphMeasurementLowActions[i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		if (AllphMeasurementHighActions) {
+			int HighSetting = AllphMeasurementHighThreshold as Integer
+			if (Currentstate > HighSetting) {
+				for ( def i = 0; i < AllphMeasurementHighActions.size(); i++) {
+					SelectionArray[i] = AllphMeasurementHighActions[i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
+			}
+		}
+		if (AllphMeasurementLowActions) {
+			int LowSetting = AllphMeasurementLowThreshold as Integer
+			if (Currentstate < LowSetting) {
+				for ( def i = 0; i < AllphMeasurementLowActions.size(); i++) {
+					SelectionArray[i] = AllphMeasurementLowActions[i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
 	}
 }
 
 def DosoundPressureLevel(evt) {
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < soundPressureLevel.size(); i++) {
-		if ( evt.deviceId == soundPressureLevel[i].id ) {
-			Changed = soundPressureLevel[i]
-			Number = i
-		}
-	}
-	int Currentstate = Changed.currentValue("soundPressureLevel") as Integer
-	if (settings["soundPressureLevelHighActions${evt.deviceId}"]) {
-		int HighSetting = settings["soundPressureLevelHighThreshold${evt.deviceId}"] as Integer
-		if (Currentstate > HighSetting) {
-			for ( def i = 0; i < settings["soundPressureLevelHighActions${evt.deviceId}"].size(); i++) {
-				SelectionArray[i] = settings["soundPressureLevelHighActions${evt.deviceId}"][i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+	if (allOk) {
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < soundPressureLevel.size(); i++) {
+			if ( evt.deviceId == soundPressureLevel[i].id ) {
+				Changed = soundPressureLevel[i]
+				Number = i
 			}
 		}
-	}
-	if (settings["soundPressureLevelLowActions${evt.deviceId}"]) {
-		int LowSetting = settings["soundPressureLevelLowThreshold${evt.deviceId}"] as Integer
-		if (Currentstate < LowSetting) {
-			for ( def i = 0; i < settings["soundPressureLevelLowActions${evt.deviceId}"].size(); i++) {
-				SelectionArray[i] = settings["soundPressureLevelLowActions${evt.deviceId}"][i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		int Currentstate = Changed.currentValue("soundPressureLevel") as Integer
+		if (settings["soundPressureLevelHighActions${evt.deviceId}"]) {
+			int HighSetting = settings["soundPressureLevelHighThreshold${evt.deviceId}"] as Integer
+			if (Currentstate > HighSetting) {
+				for ( def i = 0; i < settings["soundPressureLevelHighActions${evt.deviceId}"].size(); i++) {
+					SelectionArray[i] = settings["soundPressureLevelHighActions${evt.deviceId}"][i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
-	}
-	if (AllsoundPressureLevelHighActions) {
-		int HighSetting = AllsoundPressureLevelHighThreshold as Integer
-		if (Currentstate > HighSetting) {
-			for ( def i = 0; i < AllsoundPressureLevelHighActions.size(); i++) {
-				SelectionArray[i] = AllsoundPressureLevelHighActions[i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		if (settings["soundPressureLevelLowActions${evt.deviceId}"]) {
+			int LowSetting = settings["soundPressureLevelLowThreshold${evt.deviceId}"] as Integer
+			if (Currentstate < LowSetting) {
+				for ( def i = 0; i < settings["soundPressureLevelLowActions${evt.deviceId}"].size(); i++) {
+					SelectionArray[i] = settings["soundPressureLevelLowActions${evt.deviceId}"][i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
-	}
-	if (AllsoundPressureLevelLowActions) {
-		int LowSetting = AllsoundPressureLevelLowThreshold as Integer
-		if (Currentstate < LowSetting) {
-			for ( def i = 0; i < AllsoundPressureLevelLowActions.size(); i++) {
-				SelectionArray[i] = AllsoundPressureLevelLowActions[i].tokenize(":")
-				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-				SwitchSelection(SelectionArray[i])
+		if (AllsoundPressureLevelHighActions) {
+			int HighSetting = AllsoundPressureLevelHighThreshold as Integer
+			if (Currentstate > HighSetting) {
+				for ( def i = 0; i < AllsoundPressureLevelHighActions.size(); i++) {
+					SelectionArray[i] = AllsoundPressureLevelHighActions[i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
+			}
+		}
+		if (AllsoundPressureLevelLowActions) {
+			int LowSetting = AllsoundPressureLevelLowThreshold as Integer
+			if (Currentstate < LowSetting) {
+				for ( def i = 0; i < AllsoundPressureLevelLowActions.size(); i++) {
+					SelectionArray[i] = AllsoundPressureLevelLowActions[i].tokenize(":")
+					log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+					SwitchSelection(SelectionArray[i])
+				}
 			}
 		}
 	}
 }
 
 def DoButtonPushed(evt) {
-	def buttonNumber = parseJson(evt.data)?.buttonNumber
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Button.size(); i++) {
-		if ( evt.deviceId == Button[i].id ) {
-			Changed = Button[i]
-			Number = i
+	if (allOk) {
+		def buttonNumber = parseJson(evt.data)?.buttonNumber
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Button.size(); i++) {
+			if ( evt.deviceId == Button[i].id ) {
+				Changed = Button[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["${evt.deviceId}Button${buttonNumber}Push"]) {
-		//log.debug "Device that triggered the event: ${Changed.displayName} | Number = $evt.deviceId | Button $buttonNumber Pushed | Command = ${settings["${evt.deviceId}Button${buttonNumber}Push"]}"
-		for ( def i = 0; i < settings["${evt.deviceId}Button${buttonNumber}Push"].size(); i++) {
-			SelectionArray[i] = settings["${evt.deviceId}Button${buttonNumber}Push"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
+		if (settings["${evt.deviceId}Button${buttonNumber}Push"]) {
+			//log.debug "Device that triggered the event: ${Changed.displayName} | Number = $evt.deviceId | Button $buttonNumber Pushed | Command = ${settings["${evt.deviceId}Button${buttonNumber}Push"]}"
+			for ( def i = 0; i < settings["${evt.deviceId}Button${buttonNumber}Push"].size(); i++) {
+				SelectionArray[i] = settings["${evt.deviceId}Button${buttonNumber}Push"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}
 		}
 	}
 }
 
 def DoButtonHeld(evt) {
-	def buttonNumber = parseJson(evt.data)?.buttonNumber
-	def Changed
-	def Number
-	def SelectionArray = [][]
-	for ( def i = 0; i < Button.size(); i++) {
-		if ( evt.deviceId == Button[i].id ) {
-			Changed = Button[i]
-			Number = i
+	if (allOk) {
+		def buttonNumber = parseJson(evt.data)?.buttonNumber
+		def Changed
+		def Number
+		def SelectionArray = [][]
+		for ( def i = 0; i < Button.size(); i++) {
+			if ( evt.deviceId == Button[i].id ) {
+				Changed = Button[i]
+				Number = i
+			}
 		}
-	}
-	if (settings["${Number}Button${buttonNumber}Hold"]) {
-		//log.debug "Device that triggered the event: ${Changed.displayName} | Number = $Number | Button $buttonNumber Pushed | Command = ${settings["${Number}Button${buttonNumber}Push"]}"
-		for ( def i = 0; i < settings["${evt.deviceId}Button${buttonNumber}Hold"].size(); i++) {
-			SelectionArray[i] = settings["${evt.deviceId}Button${buttonNumber}Hold"][i].tokenize(":")
-			log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
-			SwitchSelection(SelectionArray[i])
-		}		 
+		if (settings["${Number}Button${buttonNumber}Hold"]) {
+			//log.debug "Device that triggered the event: ${Changed.displayName} | Number = $Number | Button $buttonNumber Pushed | Command = ${settings["${Number}Button${buttonNumber}Push"]}"
+			for ( def i = 0; i < settings["${evt.deviceId}Button${buttonNumber}Hold"].size(); i++) {
+				SelectionArray[i] = settings["${evt.deviceId}Button${buttonNumber}Hold"][i].tokenize(":")
+				log.debug "DeviceType = ${SelectionArray[i][0]},Device = ${SelectionArray[i][1]},Action = ${SelectionArray[i][2]}"
+				SwitchSelection(SelectionArray[i])
+			}		 
+		}
 	}
 }
 
@@ -4150,7 +4262,7 @@ private hideAudioNotifyActions() {
 
 // execution filter methods
 private getAllOk() {
-	modeOk && daysOk && timeOk
+	modeOk && daysOk && timeOk && InstanceEnabled && CurrentIlluminance() && CurrentContact() && CurrentSwitch() && CurrentAcceleration() && CurrentMotion() && CurrentTamper() && CurrentShock() && CurrentSleep() && CurrentSound() && CurrentWater() && CurrentBeacon() && CurrentPresence() && CurrentCODetector() && CurrentSmoke() && CurrentPowerSource() && CurrentDoor() && CurrentValve() && CurrentShade() && CurrentTemperature() && CurrentPowerMeter() && CurrentVoltage() && CurrentEnergyMeter() && CurrentCO2Measurement() && CurrentHumidity() && CurrentUltravioletIndex() && CurrentphMeasurement() && CurrentsoundPressureLevel()
 }
 
 private getModeOk() {
