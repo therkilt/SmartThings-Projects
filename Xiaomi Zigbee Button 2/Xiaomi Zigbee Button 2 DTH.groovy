@@ -36,8 +36,7 @@ metadata {
 		attribute "batterylevel", "string"
 		attribute "lastCheckin", "string"
         
-    	fingerprint profileId: "0104", deviceId: "0104", inClusters: "0000, 0003", outClusters: "0000, 0004, 0003, 0006, 0008, 0005", manufacturer: "LUMI", model: "lumi.sensor_switch", deviceJoinName: "Xiaomi Button"
-
+    	fingerprint endpointId: "01", inClusters: "0000,FFFF,0006", outClusters: "0000,0004,FFFF", manufacturer: "LUMI", model: "lumi.sensor_switch.aq2"
 	}
     
     simulator {
@@ -182,7 +181,8 @@ private createButtonEvent(button) {
     //if (timeDif < 0) 
     //	return []	//likely a message sequence issue. Drop this press and wait for another. Probably won't happen...
     //else if (timeDif < holdTimeMillisec) 
-    	return createEvent(name: "button", value: "pushed", data: [buttonNumber: button], descriptionText: "$device.displayName button $button was pushed", isStateChange: true)
+      log.debug "Button Pressed"
+      return createEvent(name: "button", value: "pushed", data: [buttonNumber: button], descriptionText: "$device.displayName button $button was pushed", isStateChange: true)
     //else 
     //	return createEvent(name: "button", value: "held", data: [buttonNumber: button], descriptionText: "$device.displayName button $button was held", isStateChange: true)
 }
@@ -205,6 +205,7 @@ private String swapEndianHex(String hex) {
 }
 
 def push() {
+    log.debug "App Button Pressed"
 	sendEvent(name: "switch", value: "on", isStateChange: true, displayed: false)
 	sendEvent(name: "switch", value: "off", isStateChange: true, displayed: false)
 	sendEvent(name: "momentary", value: "pushed", isStateChange: true)
