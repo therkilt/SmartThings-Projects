@@ -1,5 +1,5 @@
 /**
- *  Xiaomi Zigbee Button
+ *  Xiaomi Zigbee Button AQ2 1.2
  *
  *  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
  *  in compliance with the License. You may obtain a copy of the License at:
@@ -17,14 +17,23 @@
  *  fixed battery parsing problem
  *  added lastcheckin attribute and tile
  *  added a means to also push button in as tile on smartthings app
- *  fixed ios tile label problem and battery bug 
+ *  fixed ios tile label problem and battery bug
+ *  Ver 1.0  -  7-19-2017
+ *    Converted to support button presses with the square chassis "Xiaomi Zigbee Button Aq2" WXKG11LM
+ *  Ver 1.1  -  7-19-2017
+ *    Changed the Fingerprint for the "Xiaomi Zigbee Button Aq2" so it will be detected and get this DTH during pairing
+ *    Added button and app press logging
+ *  Ver 1.2  -  7-28-2017
+ *    Removed the Holdable Button attribute and configuration settings until I have time to find a way to make the Aqara button holdable
+ *    Removed the configuration tile
+ *    Removed the battery tile, and Battery attribute and set the battery to report 100% since the Aqara button doesn't report battery level
  *
  */
 metadata {
-	definition (name: "Xiaomi Zigbee Button 2", namespace: "terk", author: "terk") {	
-    	capability "Battery"
+	definition (name: "Xiaomi Zigbee Button AQ2", namespace: "terk", author: "terk") {	
+//    	capability "Battery"
 		capability "Button"
-		capability "Holdable Button"
+//		capability "Holdable Button"
 		capability "Actuator"
 		capability "Switch"
 		capability "Momentary"
@@ -45,8 +54,8 @@ metadata {
     }
     
     preferences{
-    	input ("holdTime", "number", title: "Minimum time in seconds for a press to count as \"held\"",
-        		defaultValue: 4, displayDuringSetup: false)
+//    	input ("holdTime", "number", title: "Minimum time in seconds for a press to count as \"held\"",
+//        		defaultValue: 4, displayDuringSetup: false)
     }
 
 	tiles(scale: 2) {
@@ -61,18 +70,18 @@ metadata {
             }
 		}        
        
-        valueTile("battery", "device.battery", decoration: "flat", inactiveLabel: false, width: 2, height: 2) {
-			state "battery", label:'${currentValue}% battery', unit:""
-		}
+//        valueTile("battery", "device.battery", decoration: "flat", inactiveLabel: false, width: 2, height: 2) {
+//			state "battery", label:'${currentValue}% battery', unit:""
+//		}
         standardTile("refresh", "device.refresh", inactiveLabel: false, decoration: "flat", width: 2, height: 2) {
 			state "default", action:"refresh.refresh", icon:"st.secondary.refresh"
         }
-        standardTile("configure", "device.configure", inactiveLabel: false, decoration: "flat", width: 2, height: 2) {
-			state "configure", label:'', action:"configuration.configure", icon:"st.secondary.configure"
-		}
+//        standardTile("configure", "device.configure", inactiveLabel: false, decoration: "flat", width: 2, height: 2) {
+//			state "configure", label:'', action:"configuration.configure", icon:"st.secondary.configure"
+//		}
         
 		main (["switch"])
-		details(["switch", "battery", "refresh", "configure"])
+		details(["switch", "refresh"])//, "battery", "configure"
 	}
 }
 
@@ -103,14 +112,15 @@ def refresh(){
 	"st rattr 0x${device.deviceNetworkId} 1 2 0"
     "st rattr 0x${device.deviceNetworkId} 1 0 0"
 	log.debug "refreshing"
-    
-    createEvent([name: 'batterylevel', value: '100', data:[buttonNumber: 1], displayed: false])
+    sendEvent(name: 'numberOfButtons', value: 1)
+    //createEvent([name: 'batterylevel', value: '100', data:[buttonNumber: 1], displayed: false])
 }
 
 private Map parseCatchAllMessage(String description) {
 	Map resultMap = [:]
 	def cluster = zigbee.parse(description)
 	log.debug cluster
+	log.debug "${cluster.clusterId}"
 	if (cluster) {
 		switch(cluster.clusterId) {
 			case 0x0000:
@@ -140,7 +150,7 @@ private Map getBatteryResult(rawValue) {
 
 	log.debug rawValue
     
-    int battValue = rawValue
+    int battValue = 100
      
     def maxbatt = 100
 
